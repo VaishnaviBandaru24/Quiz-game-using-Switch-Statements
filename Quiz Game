@@ -1,0 +1,123 @@
+#include <stdio.h>
+
+int main()
+{
+    int choice, answer, score = 0;
+    int correctAnswer;
+    int i;
+
+    printf("===== QUIZ APPLICATION =====\n");
+    printf("1. Start Quiz\n");
+    printf("2. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+        case 1:
+            for (i = 1; i <= 10; i++)
+            {
+                printf("\nQuestion %d:\n", i);
+
+                switch (i)
+                {
+                    case 1:
+                        printf("What is the capital of India?\n");
+                        printf("1. Mumbai\n2. Hyderabad\n");
+                        printf("3. New Delhi\n4. Chennai\n");
+                        correctAnswer = 3;
+                        break;
+                    case 2:
+                        printf("Which function takes input in C?\n");
+                        printf("1. printf()\n2. scanf()\n");
+                        printf("3. pow()\n4. sqrt()\n");
+                        correctAnswer = 2;
+                        break;
+
+                    case 3:
+                        printf("Which symbol ends a C statement?\n");
+                        printf("1. .\n2. ,\n3. ;\n4. :\n");
+                        correctAnswer = 3;
+                        break;
+
+                    case 4:
+                        printf("Which is a programming language?\n");
+                        printf("1. HTML\n2. C\n3. CSS\n4. HTTP\n");
+                        correctAnswer = 2;
+                        break;
+
+                    case 5:
+                        printf("Which loop executes at least once?\n");
+                        printf("1. for\n2. while\n");
+                        printf("3. do-while\n4. None\n");
+                        correctAnswer = 3;
+                        break;
+
+                    case 6:
+                        printf("Which format specifier is used for int?\n");
+                        printf("1. %%f\n2. %%c\n3. %%s\n4. %%d\n");
+                        correctAnswer = 4;
+                        break;
+
+                    case 7:
+                        printf("What is the result of 5 + 3?\n");
+                        printf("1. 6\n2. 7\n3. 8\n4. 9\n");
+                        correctAnswer = 3;
+                        break;
+
+                    case 8:
+                        printf("Which keyword is used for a decision?\n");
+                        printf("1. if\n2. print\n3. scanf\n4. return\n");
+                        correctAnswer = 1;
+                        break;
+
+                    case 9:
+                        printf("Which operator checks equality?\n");
+                        printf("1. =\n2. ==\n3. !=\n4. >=\n");
+                        correctAnswer = 2;
+                        break;
+
+                    case 10:
+                        printf("Which function displays output in C?\n");
+                        printf("1. scanf()\n2. main()\n");
+                        printf("3. printf()\n4. input()\n");
+                        correctAnswer = 3;
+                        break;
+                }
+
+                printf("Enter your answer (1-4): ");
+                scanf("%d", &answer);
+
+                if (answer < 1 || answer > 4)
+                {
+                    printf("Invalid answer!\n");
+                }
+                else if (answer == correctAnswer)
+                {
+                    printf("Correct Answer!\n");
+                    score = score + 1;
+                }
+                else
+                {
+                    printf("Incorrect Answer!\n");
+                }
+            }
+
+            printf("\n===== QUIZ RESULT =====\n");
+            printf("Total Questions : 10\n");
+            printf("Correct Answers : %d\n", score);
+            printf("Incorrect Answers : %d\n", 10 - score);
+            printf("Final Score : %d/10\n", score);
+            printf("\nThank you for participating!\n");
+            break;
+            case 2:
+            printf("Thank you! Exiting the program.\n");
+            break;
+
+        default:
+            printf("Invalid choice!\n");
+            printf("Program terminated.\n");
+    }
+
+    return 0;
+}
